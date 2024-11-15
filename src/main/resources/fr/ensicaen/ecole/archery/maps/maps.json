@@ -1,0 +1,174 @@
+{
+    "maps": [
+      {
+        "name": "Easy",
+        "mapWidth": 1080,
+        "mapHeight": 720,
+        "target": {
+          "position": {
+            "x": 550,
+            "y": 200,
+            "z": 400
+          },
+          "radius": 60,
+          "nbPart": 9
+        },
+        "player": {
+          "position": {
+            "x": 550,
+            "y": 615,
+            "z": 0
+          },
+          "nbArrow": 30
+        },
+        "box": {
+          "nbArrows": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y":150 
+            }
+          },
+          "scoreZone": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y": 10
+            }
+          }
+        },
+        "bow": {
+          "powerBar": {
+            "width": 80,
+            "height": 400,
+            "position": {
+              "x": 950,
+              "y": 250
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 540
+          },
+          "width": 320,
+          "height": 150
+        }
+      },
+
+      {
+        "name": "Normal",
+        "mapWidth": 1080,
+        "mapHeight": 720,
+        "target": {
+          "position": {
+            "x": 550,
+            "y": 200,
+            "z": 400
+          },
+          "radius": 30,
+          "nbPart": 9
+        },
+        "player": {
+          "position": {
+            "x": 550,
+            "y": 615,
+            "z": 0
+          },
+          "nbArrow":20 
+        },
+        "box": {
+          "nbArrows": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y":150 
+            }
+          },
+          "scoreZone": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y": 10
+            }
+          }
+        },
+        "bow": {
+          "powerBar": {
+            "width": 80,
+            "height": 400,
+            "position": {
+              "x": 950,
+              "y": 250
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 540
+          },
+          "width": 320,
+          "height": 150
+        }
+      },
+      {
+        "name": "Hard",
+        "mapWidth": 1080,
+        "mapHeight": 720,
+        "target": {
+          "position": {
+            "x": 550,
+            "y": 200,
+            "z": 400
+          },
+          "radius": 20,
+          "nbPart": 9
+        },
+        "player": {
+          "position": {
+            "x": 550,
+            "y": 615,
+            "z": 0
+          },
+          "nbArrow": 10
+        },
+        "box": {
+          "nbArrows": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y":150 
+            }
+          },
+          "scoreZone": {
+            "width": 200,
+            "height": 100,
+            "position": {
+              "x": 10,
+              "y": 10
+            }
+          }
+        },
+        "bow": {
+          "powerBar": {
+            "width": 80,
+            "height": 400,
+            "position": {
+              "x": 950,
+              "y": 250
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 540
+          },
+          "width": 320,
+          "height": 150
+        }
+      }
+    ]
+  }
+  

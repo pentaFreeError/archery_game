@@ -1,0 +1,80 @@
+plugins {
+    id 'application'
+    id "org.openjfx.javafxplugin" version "0.0.14"
+    id 'java'
+    id 'jacoco'
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+application {
+    mainClass = 'fr.ensicaen.ecole.archery.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.media' ]
+}
+
+dependencies {
+    implementation "org.openjfx:javafx-controls:21"
+    implementation "org.openjfx:javafx-fxml:21"
+    implementation "org.openjfx:javafx-graphics:21"
+    implementation "org.openjfx:javafx-base:21"
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.+'
+    testImplementation 'org.mockito:mockito-core:4.+'
+}
+
+tasks.register('copyLibFolder', Copy) {
+    description 'Copies the lib folder.'
+    from('lib')
+    into("/classes")
+}
+
+compileJava.dependsOn copyLibFolder
+
+applicationDistribution.from(['LICENSE', 'README.md']) {
+    into ''
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+sourceSets.main {
+    java.srcDir file('src/main/java')
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'fr.ensicaen.ecole.archery.Main'
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+
+
